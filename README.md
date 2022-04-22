@@ -10,3 +10,6 @@ At the start of the program, a while loop will begin that will ask the user what
 Once the user has provided the necessary information, the item will be added to the user's 'shopping list', as well as their 'receipt'. The price will be added to the subtotal to be calculated with taxes for the final total.
 
 The selection process will continue until the user notes that they are finished shopping. At this point, everything in the shopping list will be printed to a text file as a receipt. The total of the cart will be calculated to include tax.
+
+## Outputs:
+This program will output a text file titled 'receipt.txt'. The file will contain each item in a user's shopping list as well as the price for each item, the subtotal of the cart, and the final total of the cart.
