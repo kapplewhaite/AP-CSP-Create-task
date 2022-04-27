@@ -83,23 +83,31 @@ while True:
     clearConsole()
 
     if userChoice == 'search':
+        # Prompts the user with which department they want to search through
         print('Which department would you like to view (meat, produce, dairy, other)')
         userChoice = input('Type your choice (case-sensitive): ')
 
         if userChoice == 'meat':
             print("Here's the meat department: ")
+            
+            # Takes each entry in the 'meat' dictionary and displays it in a readable format
             for k in meat:
+
+                # For each key found in the dictionary, print the key and the value associated with it
                 print(k + ': $' + str(meat[k]))
 
+            # Asks the user which item from the dictionary they would like to purchase
             print('Which item would you like to purchase?')
-            userChoice = input(" ")
+            userChoice = input()
 
+            # If the item cannot be found in the dictionary, inform the user and restart the loop
             if userChoice not in meat:
                 print('The item you requested could not be found in the list.')
                 print('Please try again')
                 print('This message will disappear in 3 seconds...')
                 sleep(3)
                 clearConsole()
+            # If the item was able to found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
                 shoppingList.append(userChoice)
                 subtotal += meat[userChoice]
@@ -107,3 +115,5 @@ while True:
                 # Remove from final version
                 print(shoppingList)
                 print(subtotal)
+        elif userChoice == 'produce':
+            print("Here's the produce department: ")
