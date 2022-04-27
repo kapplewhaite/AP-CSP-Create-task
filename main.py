@@ -66,12 +66,19 @@ print('Welcome to the shopping list planner!')
 
 # Initialize a loop to start the program
 while True:
-    print('There are ' + len(shoppingList) + ' items on your shopping list.')
+    print('There are ' + str(len(shoppingList)) + ' items on your shopping list.')
     print('What you would like to do? (search, view list, done)')
-    userChoice = input('Type your choice (case-sensitive)')
+    userChoice = input('Type your choice (case-sensitive): ')
 
     # Branches into multiple different paths depending on the user's choice
 
     # If the user chooses search, they will have the opportunity to search through the 4 different dictionaries for products to add to their list
     # If the user chooses to view their list, the program will show off of the items in the list and provide the subtotal at the end
     # If the user selects done, this will break the loop and print the list to a text file. Sales tax will also be calculated and added to the file. Please note that this option will only be available if the shopping list contains items.
+
+    # Clear the console to free up space
+    clearConsole()
+
+    if userChoice == 'search':
+        print('Which department would you like to view (meat, produce, dairy, other)')
+        userChoice = input('Type your choice (case-sensitive): ')
