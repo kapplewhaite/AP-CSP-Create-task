@@ -245,6 +245,8 @@ while True:
             break
 
 print("Your list will be printed out to a text file titled 'receipt.txt'")
+print('This program will close in 5 seconds')
+sleep(5)
 
 # Create the 'receipt.txt' file to store the results
 with open('receipt.txt', 'a') as log:
