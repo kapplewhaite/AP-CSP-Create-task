@@ -4,6 +4,9 @@
 # Import the os module to clear the console from time to time
 import os
 
+# Import the sleep function to pause the program
+from time import sleep
+
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
@@ -82,3 +85,25 @@ while True:
     if userChoice == 'search':
         print('Which department would you like to view (meat, produce, dairy, other)')
         userChoice = input('Type your choice (case-sensitive): ')
+
+        if userChoice == 'meat':
+            print("Here's the meat department: ")
+            for k in meat:
+                print(k + ': $' + str(meat[k]))
+
+            print('Which item would you like to purchase?')
+            userChoice = input(" ")
+
+            if userChoice not in meat:
+                print('The item you requested could not be found in the list.')
+                print('Please try again')
+                print('This message will disappear in 3 seconds...')
+                sleep(3)
+                clearConsole()
+            else:
+                shoppingList.append(userChoice)
+                subtotal += meat[userChoice]
+
+                # Remove from final version
+                print(shoppingList)
+                print(subtotal)
