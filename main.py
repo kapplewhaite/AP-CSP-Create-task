@@ -16,10 +16,18 @@ def clearConsole():
 
 # Defines the function to print the contents of each dictionary
 def showInventory(department:dict):
-  """Takes each key from a given dictionary and prints it"""
-  for k in department:
-    # Prints the key with the value as a price
-    print(k + ': $' + str(department[k]))
+    """Takes each key from a given dictionary and prints it"""
+    for k in department:
+        # Prints the key with the value as a price
+        print(k + ': $' + str(department[k]))
+
+# Defines the function to display an error message
+def showError():
+    print('Your command was unable to be fulfilled.')
+    print('Please try again')
+    print('This message will disappear in 3 seconds...')
+    sleep(3)
+  
   
 # The user's empty shopping list at the start of the program
 shoppingList = []
@@ -106,23 +114,81 @@ while True:
 
             # If the item cannot be found in the dictionary, inform the user and restart the loop
             if userChoice not in meat:
-                print('The item you requested could not be found in the list.')
-                print('Please try again')
-                print('This message will disappear in 3 seconds...')
-                sleep(3)
-                clearConsole()
-            # If the item was able to found in the dictionary, add it to the shopping list and add the price to the subtotal
+                showError()
+            # If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
                 shoppingList.append(userChoice)
                 subtotal += meat[userChoice]
 
-                # Remove from final version
-                print(shoppingList)
-                print(subtotal)
+            clearConsole()
+
         elif userChoice == 'produce':
             print("Here's the produce department: ")
 
             # Prints the produce department
             showInventory(produce)
 
-            
+            # Asks the user which item from the dictionary they would like to purchase
+            print('Which item would you like to purchase?')
+            userChoice = input()
+
+            # If the item cannot be found in the dictionary, inform the user and restart the loop
+            if userChoice not in produce:
+                showError()
+            # If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
+            else:
+                shoppingList.append(userChoice)
+                subtotal += produce[userChoice]
+
+            clearConsole()
+
+        elif userChoice == 'dairy':
+            print("Here's the dairy department: ")
+
+            # Prints the dairy department
+            showInventory(dairy)
+
+            # Asks the user which item from the dictionary they would like to purchase
+            print('Which item would you like to purchase?')
+            userChoice = input()
+
+            # If the item cannot be found in the dictionary, inform the user and restart the loop
+            if userChoice not in dairy:
+                showError()
+            # If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
+            else:
+                shoppingList.append(userChoice)
+                subtotal += dairy[userChoice]
+
+            clearConsole()
+
+        elif userChoice == 'other':
+            print("Here are some other items for sale: ")
+
+            # Prints the other department
+            showInventory(other)
+
+            # Asks the user which item from the dictionary they would like to purchase
+            print('Which item would you like to purchase?')
+            userChoice = input()
+
+            # If the item cannot be found in the dictionary, inform the user and restart the loop
+            if userChoice not in other:
+                showError
+            #If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
+            else:
+                shoppingList.append(userChoice)
+                subtotal += other[userChoice]
+
+            clearConsole()
+
+        # If the provided answer doesn't match with the provided answers, inform the 
+        else:
+            showError()
+            clearConsole()
+
+    elif userChoice == 'view list':
+        # Shows each item currently on the list
+        clearConsole()
+        
+        
