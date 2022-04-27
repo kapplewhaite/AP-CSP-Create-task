@@ -7,13 +7,20 @@ import os
 # Import the sleep function to pause the program
 from time import sleep
 
+# Defines the command to clear the console
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
         command = 'cls'
     os.system(command)
 
-
+# Defines the function to print the contents of each dictionary
+def showInventory(department:dict):
+  """Takes each key from a given dictionary and prints it"""
+  for k in department:
+    # Prints the key with the value as a price
+    print(k + ': $' + str(department[k]))
+  
 # The user's empty shopping list at the start of the program
 shoppingList = []
 
@@ -89,13 +96,10 @@ while True:
 
         if userChoice == 'meat':
             print("Here's the meat department: ")
-            
-            # Takes each entry in the 'meat' dictionary and displays it in a readable format
-            for k in meat:
 
-                # For each key found in the dictionary, print the key and the value associated with it
-                print(k + ': $' + str(meat[k]))
-
+            # Prints the meat department
+            showInventory(meat)
+          
             # Asks the user which item from the dictionary they would like to purchase
             print('Which item would you like to purchase?')
             userChoice = input()
@@ -117,3 +121,8 @@ while True:
                 print(subtotal)
         elif userChoice == 'produce':
             print("Here's the produce department: ")
+
+            # Prints the produce department
+            showInventory(produce)
+
+            
