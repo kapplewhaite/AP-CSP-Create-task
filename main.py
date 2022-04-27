@@ -191,4 +191,10 @@ while True:
         # Shows each item currently on the list
         clearConsole()
         
-        
+        # Prints out each item currently in the shopping list
+        # For each item in the list...
+        for x in shoppingList:
+            # Print out that item
+            print(x)
+            
+        print('Your current subtotal is: $' + str(subtotal))
