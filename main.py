@@ -23,7 +23,7 @@ def showInventory(department:dict):
 
 # Defines the function to display an error message
 def showError():
-    print('Your command was unable to be fulfilled.')
+    print('This command was unable to be fulfilled.')
     print('Please try again')
     print('This message will disappear in 3 seconds...')
     sleep(3)
@@ -174,7 +174,7 @@ while True:
 
             # If the item cannot be found in the dictionary, inform the user and restart the loop
             if userChoice not in other:
-                showError
+                showError()
             #If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
                 shoppingList.append(userChoice)
