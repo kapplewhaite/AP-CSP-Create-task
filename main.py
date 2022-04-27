@@ -33,7 +33,7 @@ def showError():
 shoppingList = []
 
 # Sets the user's subtotal to $0.00
-tempSubtotal = 0.0
+subtotal = 0.0
 
 # The dictionaries containing all of the products
 # Each item in categorized into a particular dictionary that corresponds to where you would find it in a store
@@ -124,7 +124,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    tempSubtotal += meat[userChoice]
+                    subtotal += meat[userChoice]
                 
             clearConsole()
 
@@ -150,7 +150,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    tempSubtotal += produce[userChoice]
+                    subtotal += produce[userChoice]
 
             clearConsole()
 
@@ -176,7 +176,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    tempSubtotal += dairy[userChoice]
+                    subtotal += dairy[userChoice]
 
             clearConsole()
 
@@ -202,7 +202,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    tempSubtotal += other[userChoice]
+                    subtotal += other[userChoice]
 
             clearConsole()
 
@@ -221,4 +221,46 @@ while True:
             # Print out that item
             print(x)
             
-        print('Your current subtotal is: $' + str(round(tempSubtotal, 2)))
+        print('Your current subtotal is: $' + str(round(subtotal, 2)))
+
+    elif userChoice == 'done':
+        # This choice will only be available if there is at least one item in the shopping list
+        if len(shoppingList) >= 1:
+            print('Shopping completed')
+
+            # Print out each item in the shopping list
+            for x in shoppingList:
+                print(x)
+
+            # Display the subtotal for the list
+            print('Your subtotal is: $' + str(round(subtotal, 2)))
+
+            # Calculate the tax for the list
+            print('Tax: $' + str(round(subtotal * 0.04, 2)))
+
+            # Calculate the total for the list
+            print('Your final total is: $' + str(round(subtotal * 1.04, 2)))
+
+            # Breaks the program out of the loop
+            break
+
+print("Your list will be printed out to a text file titled 'receipt.txt'")
+
+# Create the 'receipt.txt' file to store the results
+with open('receipt.txt', 'a') as log:
+
+    print("Here's your receipt:", file=log)
+
+    for x in shoppingList:
+        print(x, file=log)
+
+    print(file=log)
+
+    # Display the subtotal for the list
+    print('Your subtotal is: $' + str(round(subtotal, 2)), file=log)
+
+    # Calculate the tax for the list
+    print('Tax: $' + str(round(subtotal * 0.04, 2)), file=log)
+
+    # Calculate the total for the list
+    print('Your final total is: $' + str(round(subtotal * 1.04, 2)), file=log)
