@@ -33,7 +33,7 @@ def showError():
 shoppingList = []
 
 # Sets the user's subtotal to $0.00
-subtotal = 0.0
+tempSubtotal = 0.0
 
 # The dictionaries containing all of the products
 # Each item in categorized into a particular dictionary that corresponds to where you would find it in a store
@@ -124,7 +124,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    subtotal += meat[userChoice]
+                    tempSubtotal += meat[userChoice]
                 
             clearConsole()
 
@@ -150,7 +150,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    subtotal += produce[userChoice]
+                    tempSubtotal += produce[userChoice]
 
             clearConsole()
 
@@ -176,7 +176,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    subtotal += dairy[userChoice]
+                    tempSubtotal += dairy[userChoice]
 
             clearConsole()
 
@@ -202,7 +202,7 @@ while True:
                 # Add the selected item to the shopping list based on the number of times requested by the user
                 for i in range(0, numberOfItems):
                     shoppingList.append(userChoice)
-                    subtotal += other[userChoice]
+                    tempSubtotal += other[userChoice]
 
             clearConsole()
 
@@ -221,4 +221,4 @@ while True:
             # Print out that item
             print(x)
             
-        print('Your current subtotal is: $' + str(subtotal))
+        print('Your current subtotal is: $' + str(round(tempSubtotal, 2)))
