@@ -243,6 +243,9 @@ while True:
 
             # Breaks the program out of the loop
             break
+        else:
+            print("This command can only be used when there's at least one item in the shopping list")
+            sleep(3)
 
 print("Your list will be printed out to a text file titled 'receipt.txt'")
 print('This program will close in 5 seconds')
