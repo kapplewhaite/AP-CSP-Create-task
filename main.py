@@ -117,9 +117,15 @@ while True:
                 showError()
             # If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
-                shoppingList.append(userChoice)
-                subtotal += meat[userChoice]
+                # Ask the user how many times they would like to purchase that product
+                print('How many times would you like to add this item to the list?')
+                numberOfItems = int(input())
 
+                # Add the selected item to the shopping list based on the number of times requested by the user
+                for i in range(0, numberOfItems):
+                    shoppingList.append(userChoice)
+                    subtotal += meat[userChoice]
+                
             clearConsole()
 
         elif userChoice == 'produce':
@@ -137,8 +143,14 @@ while True:
                 showError()
             # If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
-                shoppingList.append(userChoice)
-                subtotal += produce[userChoice]
+                # Ask the user how many times they would like to purchase that product
+                print('How many times would you like to add this item to the list?')
+                numberOfItems = int(input())
+
+                # Add the selected item to the shopping list based on the number of times requested by the user
+                for i in range(0, numberOfItems):
+                    shoppingList.append(userChoice)
+                    subtotal += produce[userChoice]
 
             clearConsole()
 
@@ -157,8 +169,14 @@ while True:
                 showError()
             # If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
-                shoppingList.append(userChoice)
-                subtotal += dairy[userChoice]
+                # Ask the user how many times they would like to purchase that product
+                print('How many times would you like to add this item to the list?')
+                numberOfItems = int(input())
+
+                # Add the selected item to the shopping list based on the number of times requested by the user
+                for i in range(0, numberOfItems):
+                    shoppingList.append(userChoice)
+                    subtotal += dairy[userChoice]
 
             clearConsole()
 
@@ -177,8 +195,14 @@ while True:
                 showError()
             #If the item was able to be found in the dictionary, add it to the shopping list and add the price to the subtotal
             else:
-                shoppingList.append(userChoice)
-                subtotal += other[userChoice]
+                # Ask the user how many times they would like to purchase that product
+                print('How many times would you like to add this item to the list?')
+                numberOfItems = int(input())
+
+                # Add the selected item to the shopping list based on the number of times requested by the user
+                for i in range(0, numberOfItems):
+                    shoppingList.append(userChoice)
+                    subtotal += other[userChoice]
 
             clearConsole()
 
