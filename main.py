@@ -1,6 +1,3 @@
-# Created by Kaiden Applewhaite
-# 4/22/2022
-
 # Import the os module to clear the console from time to time
 import os
 
